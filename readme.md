@@ -1,4 +1,4 @@
-# Exercies from the 'Learn Enough JS Tutorial'
+# Exercises from the 'Learn Enough JS to be Dangerous' tutorial
 
 [Learn Enough JavaScript to be Dangerous tutorial](https://www.learnenough.com/javascript)
 
