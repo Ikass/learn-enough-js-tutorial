@@ -1,0 +1,16 @@
+#!/usr/bin/node
+
+let fs = require("fs");
+let Phrase = require("ikass-palindrome");
+
+let text = fs.readFileSync("phrases.txt", "utf-8");
+
+
+let palindromes = text.split("\n").forEach(function(line) {
+    let phrase = new Phrase(line);
+    if (phrase.palindrome()){
+        // write the palindromes to file
+        fs.writeFileSync("palindromes.txt", line, {flag:'a'});
+        console.log("palindrome detected:", line);
+    }
+});
