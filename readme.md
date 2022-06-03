@@ -3,6 +3,6 @@
 [Learn Enough JavaScript to be Dangerous tutorial](https://www.learnenough.com/javascript)
 
 ## Live versions of apps/exercises
-- [First app "Hello, World!"](https://ikass.github.io/learn-enough-js-tutorial/){:target="_blank"}
+- [First app "Hello, World!"](https://ikass.github.io/learn-enough-js-tutorial/ target="_blank")
 
-- [Palindrome Detector](https://ikass.github.io/learn-enough-js-tutorial/palindrome.html){:target="_blank"}
+- [Palindrome Detector](https://ikass.github.io/learn-enough-js-tutorial/palindrome.html target="_blank")
