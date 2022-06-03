@@ -1,0 +1,18 @@
+#!/usr/bin/node
+
+let urllib = require("urllib");
+let fs = require("fs");
+let Phrase = require("ikass-palindrome");
+let url = "https://cdn.learnenough.com/phrases.txt";
+
+urllib.request(url, { followRedirect: true }, function(error, data, response) {
+    let body = data.toString();
+    let lines = body.split("\n");
+    let palindromes = lines.filter(line => (new Phrase(line).palindrome()) );
+
+    palindromes.forEach(function(palindrome) {
+        // write palindromes to file, flag `a` to append to a file with content, otherwise will overwrite
+        fs.writeFileSync("palindromes_url.txt", palindrome, {flag:'a'});
+        console.log("palindrome detected:", palindrome);
+    });
+});

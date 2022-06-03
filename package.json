@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "ikass-palindrome": "^0.1.1"
+    "ikass-palindrome": "^0.1.1",
+    "urllib": "^2.38.0"
   }
 }
