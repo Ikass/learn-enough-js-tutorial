@@ -1,0 +1,31 @@
+#!/usr/bin/node
+
+// Returns the paragraphs of a Wikipedia link, stripped of references numbers
+
+let urllib = require("urllib");
+let fs = require("fs");
+let url = process.argv[2];
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+
+urllib.request(url, { followRedirect: true}, function(error, data, response) {
+
+    let body = data.toString();
+    // Simulate a DOM.
+    let { document } = (new JSDOM(body)).window;
+
+    // Grap all the paragraphs and references.
+    let paragraphs = document.querySelectorAll("p");
+    let references = document.querySelectorAll(".reference");
+
+    // Revmove references.
+    references.forEach(function(reference) {
+        reference.remove();
+    });
+
+    // Print all paragraphs.
+    paragraphs.forEach(function(paragraph) {
+        fs.writeFileSync("article.txt", paragraph.textContent, {flag:'a'});
+        console.log(paragraph.textContent);
+    });
+});

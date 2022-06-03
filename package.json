@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "ikass-palindrome": "^0.1.1",
+    "jsdom": "^19.0.0",
     "urllib": "^2.38.0"
   }
 }
